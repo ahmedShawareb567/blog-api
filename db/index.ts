@@ -3,6 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-mongoose.connect(`mongodb://localhost:27017/${process.env.DB}`, () => {
+mongoose.connect(`${process.env.DB}`, () => {
   console.log(`DB IS CONNECTED `);
 });
