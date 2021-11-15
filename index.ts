@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import bodyParser from "body-parser";
 import route from "./router";
+import path from "path";
 
 import "./db";
 
@@ -20,7 +21,7 @@ app.use(
 
 // ROUTING
 app.get("/", (req: any, res: any) => {
-  res.send("Blog Posts");
+  res.sendFile(path.join(__dirname + "/pages/index.html"));
 });
 app.use("/api", route);
 
