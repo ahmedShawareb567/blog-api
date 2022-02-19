@@ -60,8 +60,8 @@ postRoute.post("/delete", async (req: any, res: any) => {
 postRoute.get("/find", async (req: any, res: any) => {
   try {
     const posts = await Post.find({
-      title: req.body.title,
-    });
+      title: req.body.arName,
+    }).populate("category");
     if (posts) {
       return res.status(200).json(posts);
     }

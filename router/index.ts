@@ -2,6 +2,7 @@ import express, { Router } from "express";
 import dotenv from "dotenv";
 import postRoute from "./post";
 import userRoute from "./Auth";
+import categoryRoute from "./Category";
 
 dotenv.config();
 
@@ -13,5 +14,6 @@ route.get("/", (req: any, res: any) => {
 
 route.use("/post", postRoute);
 route.use("/user", userRoute);
+route.use("/category", categoryRoute);
 
 export default route;
