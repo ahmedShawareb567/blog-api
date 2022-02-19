@@ -30,8 +30,7 @@ userRoute.post("/register", async (req: any, res: any) => {
       password: bodyData.password,
     };
 
-    user_content.password = await bcrypt.hash(bodyData.password, 15);
-
+    user_content.password = await bcrypt.hash(bodyData.password, 10);
     const user = new User(user_content);
     await user.save();
 
